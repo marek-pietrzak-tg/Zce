@@ -45,3 +45,26 @@ string(181) "<?xml version="1.0"?>
     <new-node>1</new-node>
 </application>
  */
+
+//----------
+
+$iterator = new SimpleXMLIterator($string);
+foreach ($iterator as $key => $value) {
+    echo "key: {$key}, value: {$value}\n";
+
+    if ($iterator->hasChildren()) {
+        var_dump($iterator->current());
+    }
+}
+
+/*
+key: param, value: l
+key: param, value: a
+key: help, value:
+
+
+object(SimpleXMLIterator)#5 (1) {
+["cmd"]=>
+  string(1) "h"
+}
+*/
