@@ -8,7 +8,12 @@ $string = "<?xml version='1.0'?>
     </help>
 </application>";
 
-$xml = simplexml_load_string($string);
+$xml = new SimpleXMLElement($string);
+//$xml = simplexml_load_string($string);    // this method is also correct
+
+// to load from file use:
+// - new SimpleXMLElement($filename, null, true);
+// - or: simplexml_load_file($filename);
 
 $xml->addAttribute('name', 'ls');             // this will add key attribute to the <application> root node
 
