@@ -26,3 +26,20 @@ function arraytest()
 foreach (arraytest() as $a) {   // echo 'test' is called just once
 	var_dump($a);
 }
+
+// ---- references in foreach loop
+$a = ['zero', 'one', 'two'];
+
+foreach ($a as &$v) {}
+foreach ($a as $v) {}
+
+print_r($a);
+/* Output:
+
+ Array
+(
+    [0] => zero
+    [1] => one
+    [2] => one
+)
+ */
