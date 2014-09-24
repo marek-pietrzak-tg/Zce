@@ -16,6 +16,9 @@ $date->sub(new DateInterval('P1M'));
 // so was again changed to the next day
 echo $date->format('Y-m-d') . PHP_EOL;
 
+$date->setDate(2014, 14, 32);   // 2015-03-04 no fatal error, setDate() calculates days
+echo $date->format('Y-m-d') . PHP_EOL;
+
 
 //--- DateTime createFromFormat
 $format = 'Y-m-!d H:i:s';
