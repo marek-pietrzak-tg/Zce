@@ -43,3 +43,10 @@ print_r($a);
     [2] => one
 )
  */
+
+$a = array('green', '1', 1);
+$b = array('avocado', 'apple', 'banana');
+print_r(array_combine($a, $b)); // Array ( [green] => avocado [1] => banana )
+
+$a = array('green', 'red');
+print_r(array_combine($a, $b)); // Warning: array_combine(): Both parameters should have an equal number of elements
